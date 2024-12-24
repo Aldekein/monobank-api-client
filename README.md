@@ -8,7 +8,7 @@
 
 ![monocat](https://user-images.githubusercontent.com/6859896/60575987-3102f780-9d85-11e9-986e-b7126af57f8d.png)
 
-Monobank API client wrapper build on promises.
+Monobank API client wrapper. Supports all latest API features.
 
 ## Installation
 

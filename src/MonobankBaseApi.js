@@ -42,7 +42,7 @@ class MonobankBaseApi {
         endpoint: Endpoint.CURRENCY_LIST,
       });
 
-      return data.map(v => new CurrencyInfo(v));
+      return data.map((v) => new CurrencyInfo(v));
     } catch (err) {
       if (err.isAxiosError) {
         const { status, data } = err.response;
@@ -73,9 +73,16 @@ class MonobankBaseApi {
         endpoint: Endpoint.CLIENT_INFO,
       });
 
-      const { name, accounts } = data;
+      const { clientId, name, webHookUrl, permissions, accounts, jars } = data;
 
-      return new UserInfo({ name, accounts: accounts.map(v => new Account(v)) });
+      return new UserInfo({
+        clientId,
+        name,
+        webHookUrl,
+        permissions,
+        accounts: accounts.map((acc) => new Account(acc)),
+        jars: jars.map((jar) => new Jar(jar)),
+      });
     } catch (err) {
       if (err.isAxiosError) {
         const { status, data } = err.response;
@@ -110,7 +117,7 @@ class MonobankBaseApi {
         endpoint: this._buildStatementEndpoint(account, from, to || new Date()),
       });
 
-      return data && data.map(v => new Transaction(v));
+      return data && data.map((v) => new Transaction(v));
     } catch (err) {
       if (err.isAxiosError) {
         const { status, data } = err.response;
@@ -147,7 +154,7 @@ class MonobankBaseApi {
       const { accounts } = await this.getUserInfo(headers);
 
       if (!this._currencyToAccountIdsMap[currencyCode]) {
-        accounts.forEach(acc => {
+        accounts.forEach((acc) => {
           this._currencyToAccountIdsMap[acc.currencyCode.code] = acc.id;
         });
       }
