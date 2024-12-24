@@ -5,7 +5,7 @@ const Account = require('src/Dto/Account');
 const cc = require('currency-codes');
 
 describe('src/Dto/Account', () => {
-  it('must construct correct Account object', function() {
+  it('must construct correct Account object', function () {
     const testCc = cc.number(980);
 
     const accountData = {
@@ -25,7 +25,7 @@ describe('src/Dto/Account', () => {
     assert.equal(account.cashbackType, accountData.cashbackType);
   });
 
-  it('must throw Error with invalid currency', function() {
+  it('must throw Error with invalid currency', function () {
     const accountData = {
       id: 'ffff',
       balance: 12000,

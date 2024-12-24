@@ -25,7 +25,7 @@ class Signer {
 
     this._privateKey = crypto.createPrivateKey(pkey);
 
-    this._ecdsaDerSigner = asn1.define('ECPrivateKey', function() {
+    this._ecdsaDerSigner = asn1.define('ECPrivateKey', function () {
       return this.seq().obj(this.key('r').int(), this.key('s').int());
     });
   }

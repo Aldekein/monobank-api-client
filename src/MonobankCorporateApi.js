@@ -51,7 +51,7 @@ class MonobankCorporateApi extends MonobankBaseApi {
    */
   async getAccessRequest({ permissions, callback = '' }) {
     try {
-      permissions.forEach(p => assert(p instanceof Permission));
+      permissions.forEach((p) => assert(p instanceof Permission));
     } catch (err) {
       throw new InvalidPermissionValueError('Every permission in list must be instance of Permission', { permissions });
     }

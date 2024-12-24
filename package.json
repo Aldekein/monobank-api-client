@@ -15,9 +15,9 @@
     "monobank-nodejs"
   ],
   "scripts": {
-    "lint": "yarn prettier:cmd --check \"README.md\" \"src/**/*.{json,js}\" \"config/*.{json,js}\"  \"tests/**/*.{json,js}\"",
+    "lint": "yarn prettier:cmd --check \"README.md\" \"src/**/*.{json,js}\" \"tests/**/*.{json,js}\"",
     "lint:fix": "yarn prettier",
-    "prettier": "yarn prettier:cmd --write \"README.md\" \"src/**/*.{json,js}\" \"config/*.{json,js}\"  \"tests/**/*.{json,js}\"",
+    "prettier": "yarn prettier:cmd --write \"README.md\" \"src/**/*.{json,js}\" \"tests/**/*.{json,js}\"",
     "prettier:cmd": "prettier --config .prettierrc",
     "test": "yarn run unit-test",
     "unit-test": "NODE_ENV=test ./node_modules/.bin/mocha -R spec ./tests/Unit/**",
