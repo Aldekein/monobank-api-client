@@ -238,6 +238,6 @@ const normalizedAmount = transaction.amount / Math.pow(10, transaction.currencyC
 
 `monobank-api-client` use `currency-codes` module as dictionary for `ISO 4217` to detect minor units and country of usage for currency.
 
-# Roadmap
+# Contribution
 
-- Tests
+Please do your best according to open source software principles!
